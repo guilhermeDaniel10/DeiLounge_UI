@@ -14,7 +14,7 @@ export class PaginaInicialComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver, private router: Router,
+  constructor(private observer: BreakpointObserver, private router: Router
   ) { }
 
   ngOnInit() {
