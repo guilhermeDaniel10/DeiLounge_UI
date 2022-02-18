@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/user';
 import { AutenticacaoService } from 'src/app/services/autenticacao.service';
 @Component({
   selector: 'app-login',
@@ -34,12 +35,12 @@ export class LoginComponent implements OnInit {
 
     
     this.utilizadorServ.postAutenticarUtilizador(form.value).subscribe(
-      (res: any) => {
+      (res: User) => {
 
         localStorage.setItem('token', res.token);
         
+        
         this.router.navigateByUrl('pagina-inicial');
-        this.resultado = "Login feito com sucesso!"
 
       },
       (error) => {

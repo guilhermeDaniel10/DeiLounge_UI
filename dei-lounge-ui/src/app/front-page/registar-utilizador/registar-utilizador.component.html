@@ -1,1 +1,33 @@
-<p>registar-utilizador works!</p>
+<form id ="formId" #form='ngForm' class="mb-4" autocomplete="off" (submit)="registarUtilizador(form)">
+    <div class="form-group">
+      <label id="label1">Username</label>
+      <input class="form-control" #UserName="ngModel" name="username" [(ngModel)]="formModel.username" required>
+    </div>
+    <div class="form-group">
+        <label id="label3">Email</label>
+        <input class="form-control" #UserName="ngModel" name="email" [(ngModel)]="formModel.email" required>
+      </div>
+    <div class="form-group">
+      <label id="label2" >Password</label>
+      <input type="password" class="form-control" #Password="ngModel" name="password" [(ngModel)]="formModel.password" required>
+    </div>
+    <div class="form-group">
+        <label id="label4" >Confirmar Password</label>
+        <input type="password" class="form-control" #Password="ngModel" name="confirmar" [(ngModel)]="formModel.confirmar" required>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-8 offset-md-2">
+        <button id="loginButton" name="botaoLogin" type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Registar</button>
+      </div>
+    </div>
+
+   
+  </form> 
+
+  <div id="result1" >
+    <label name="resulta">
+      <b id="resultado"  style="font-size: 9px" >{{resultado}}</b>
+    </label>
+  </div>
+
+  
